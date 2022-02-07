@@ -2,6 +2,7 @@ const app = require('express')()
 const http = require('http').createServer(app)
 const io = require('socket.io')(http);
 
+
 app.get('/', (req, res) => {
     res.send("Node Server is running. Yay!!")
 })
@@ -31,4 +32,6 @@ io.on('connection', socket => {
     })
 });
 
-http.listen(process.env.PORT)
+http.listen(process.env.PORT || 3000, function () {
+    console.log('Start the server in Port *: ' + process.env.PORT);
+});
