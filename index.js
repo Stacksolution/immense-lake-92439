@@ -7,8 +7,8 @@ const socketEvents = require('./utils/socket');
 
 class Server {
     constructor() {
-        this.port = process.env.PORT || 8080;
-        this.host = process.env.HOST || 'https://immense-lake-92439.herokuapp.com';
+        this.port = process.env.PORT || 5000;
+        this.host = process.env.HOST || '192.168.0.108';
         this.app = express();
         this.http = http.Server(this.app);
         this.socket = socketio(this.http);
