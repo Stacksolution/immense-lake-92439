@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sockets example</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+    <!-- <script src="socket.io.js"></script> -->
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+        integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+        crossorigin="anonymous"></script>
+    <script>
+        var id = 2;
+        var socket = io.connect('http://localhost:8080', { query: "id= " + id });
+        socket.on("connection", (socket) => {
+            console.log("room2");
+            socket.join("room2");
+            socket.to("room2").emit("hello");
+        });
+        socket.emit('chatList', id);
+        socket.on('chatListRes', function (data) {
+            if (data.userDisconnected) {
+                console.log(data);
+            } else if (data.userConnected) {
+                console.log(data);
+            } else {
+                console.log(data.chatList);
+            }
+        });
+    </script>
+</body>
+
+</html>
