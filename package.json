@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devmaufh/chat-app.git"
+    "url": ""
   },
   "keywords": [
     "Chat",
     "Node",
     "SocketIO"
   ],
-  "author": "Mauricio Flores Hernández",
+  "author": "K.K ADIl KHAN AJAD",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/devmaufh/chat-app/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/devmaufh/chat-app#readme",
+  "homepage": "",
   "dependencies": {
     "body-parser": "^1.19.0",
     "config": "^3.3.1",
